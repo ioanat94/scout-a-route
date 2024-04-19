@@ -42,7 +42,7 @@
   }
 </script>
 
-<form id="route-form" class="flex flex-col gap-4">
+<form id="route-form" data-testid="route-form" class="flex flex-col gap-4">
   <label class="form-control w-full">
     <div class="label pb-1">
       <span class="label-text">Starting location</span>
@@ -61,12 +61,14 @@
       </div>
       <input
         bind:value={distance}
+        data-testid="distance-input"
         type="number"
         class="input input-md input-bordered w-full focus:outline-none focus:border-primary"
       />
     </label>
     <select
       bind:value={unit}
+      data-testid="unit-select"
       class="select select-bordered w-1/2 focus:outline-none focus:border-primary"
     >
       <option selected>kilometers</option>
@@ -75,12 +77,15 @@
     </select>
   </div>
   {#if errors?.distance}
-    <p class="text-sm text-error p-0 -mt-3">{errors.distance}</p>
+    <p data-testid="form-error-message" class="text-sm text-error p-0 -mt-3">{errors.distance}</p>
   {/if}
   {#if errors?.unit}
-    <p class="text-sm text-error p-0 -mt-3">{errors.unit}</p>
+    <p data-testid="form-error-message" class="text-sm text-error p-0 -mt-3">{errors.unit}</p>
   {/if}
-  <button type="button" on:click={getRoute} class="btn btn-primary w-max mt-2"
-    >Generate route</button
+  <button
+    type="button"
+    on:click={getRoute}
+    data-testid="generate-route-btn"
+    class="btn btn-primary w-max mt-2">Generate route</button
   >
 </form>
