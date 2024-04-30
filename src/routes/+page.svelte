@@ -3,6 +3,7 @@
   // import { Loader } from "@googlemaps/js-api-loader";
   // import { PUBLIC_MAPS_API_KEY } from "$env/static/public";
 
+  import Footer from "$lib/components/Footer.svelte";
   import Sidebar from "$lib/components/Sidebar.svelte";
 
   // onMount(async () => {
@@ -42,6 +43,5 @@
       <div id="map-canvas">Map</div>
     </div>
   </div>
-
-  <div id="footer" class="h-12 bg-secondary">Footer</div>
+  <Footer />
 </div>
