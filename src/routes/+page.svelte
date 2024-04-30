@@ -4,6 +4,7 @@
   // import { PUBLIC_MAPS_API_KEY } from "$env/static/public";
 
   import Footer from "$lib/components/Footer.svelte";
+  import Header from "$lib/components/Header.svelte";
   import Sidebar from "$lib/components/Sidebar.svelte";
 
   // onMount(async () => {
@@ -36,7 +37,7 @@
 </script>
 
 <div class="text-black h-screen flex flex-col">
-  <div id="header" class="h-12 bg-primary">Header</div>
+  <Header />
   <div id="content" class="grid grid-cols-4 grow">
     <Sidebar />
     <div id="map" class="col-span-3 bg-yellow-200">
